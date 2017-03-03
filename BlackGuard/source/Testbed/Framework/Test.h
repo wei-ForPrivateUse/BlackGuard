@@ -55,7 +55,7 @@ struct Settings
 {
 	Settings()
 	{
-		viewCenter.Set(0.0f, 0.0f);
+		viewCenter.Set(-12.0f, 0.0f);
 		hz = 60.0f;
 		velocityIterations = 8;
 		positionIterations = 3;

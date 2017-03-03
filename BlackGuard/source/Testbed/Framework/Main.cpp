@@ -36,7 +36,7 @@ namespace
 	int32 mainWindow;
 	float settingsHz = 60.0;
 	GLUI *glui;
-	float32 viewZoom = 1.2f;
+	float32 viewZoom = 2.0f;
 	int tx, ty, tw, th;
 	bool rMouseDown;
 	b2Vec2 lastp;

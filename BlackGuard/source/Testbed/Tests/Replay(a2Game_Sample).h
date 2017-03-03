@@ -15,8 +15,8 @@ class Replay_a2Game_Sample: public Test {
 public:
 
 	Replay_a2Game_Sample() {
-		m_scenemgr = new FScene(&m_scenemgr_conf);
-
+		ANNWeights* weights = new ANNWeights({8,2}, {false, false}, {false, false}, true);
+		m_scenemgr = new FScene(&m_scenemgr_conf, weights);
 	}
 
 	void Step(Settings* settings) {
