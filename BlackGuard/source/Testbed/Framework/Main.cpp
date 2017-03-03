@@ -401,12 +401,11 @@ int main(int argc, char** argv)
 	char title[32];
 	sprintf(title, "SRS_Replay (Box2D Testbed)");
 	mainWindow = glutCreateWindow(title);
-	//glutSetOption (GLUT_ACTION_ON_WINDOW_CLOSE, GLUT_ACTION_GLUTMAINLOOP_RETURNS);
 
-
-	//////
-	/////
+	///*
 	glClearColor(0.0,0.0,0.0,1.0);
+	///*
+
 	glutDisplayFunc(SimulationLoop);
 	GLUI_Master.set_glutReshapeFunc(Resize);
 	GLUI_Master.set_glutKeyboardFunc(Keyboard);

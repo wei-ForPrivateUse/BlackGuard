@@ -19,7 +19,7 @@
 #ifndef TEST_H
 #define TEST_H
 
-#include "/home/usr3/wei/git/ShadowDancer/ShadowDancer/source/ShadowDancer.h"
+#include "ShadowDancer.h"
 #include "Render.h"
 
 #include <stdlib.h>
@@ -55,7 +55,7 @@ struct Settings
 {
 	Settings()
 	{
-		viewCenter.Set(32.5f, 25.0f);
+		viewCenter.Set(0.0f, 0.0f);
 		hz = 60.0f;
 		velocityIterations = 8;
 		positionIterations = 3;
@@ -193,9 +193,6 @@ protected:
     
     assa2d::SceneMgr* m_scenemgr;
     assa2d::SceneMgr::Configuration m_scenemgr_conf;
-    //a2EvaluationManager* m_evaluationManager;
-    //a2OutputManager* m_outputManager;
-    
 };
 
 #endif

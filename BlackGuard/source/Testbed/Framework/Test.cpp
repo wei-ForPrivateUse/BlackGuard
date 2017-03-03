@@ -48,12 +48,16 @@ Test::Test()
 	
 	m_bombSpawning = false;
 
+	m_stepCount = 0;
+
+	b2BodyDef bodyDef;
+	m_groundBody = m_world->CreateBody(&bodyDef);
+
 	memset(&m_maxProfile, 0, sizeof(b2Profile));
 	memset(&m_totalProfile, 0, sizeof(b2Profile));
     
     m_scenemgr = nullptr;
-    //m_evaluationManager = NULL;
-    //m_outputManager = NULL;
+    m_scenemgr_conf.World = m_world;
 }
 
 Test::~Test()
@@ -297,14 +301,12 @@ void Test::Step(Settings* settings)
 	m_pointCount = 0;
     
     
-    ///
-
-	m_scenemgr->Step();
-
-
+    //*
+	m_scenemgr->_Replay_Step();
 	//m_world->Step(timeStep, settings->velocityIterations, settings->positionIterations);
-
+	//*
 	m_world->DrawDebugData();
+
 
 	if (timeStep > 0.0f)
 	{

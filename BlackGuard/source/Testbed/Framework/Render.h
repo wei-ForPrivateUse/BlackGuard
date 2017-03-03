@@ -19,7 +19,7 @@
 #ifndef RENDER_H
 #define RENDER_H
 
-#include "/home/usr3/wei/git/ShadowDancer/ShadowDancer/source/ShadowDancer.h"
+#include "ShadowDancer.h"
 
 struct b2AABB;
 
