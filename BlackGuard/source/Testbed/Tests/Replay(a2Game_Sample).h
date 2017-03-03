@@ -15,27 +15,12 @@ class Replay_a2Game_Sample: public Test {
 public:
 
 	Replay_a2Game_Sample() {
-
-
 		m_scenemgr = new FScene(&m_scenemgr_conf);
-		//m_evaluationManager = new a2EvaluationManager_Sample;
-		m_world = m_scenemgr->GetWorld();
-		m_world->SetDestructionListener(&m_destructionListener);
-		m_world->SetContactListener(this);
-		m_world->SetDebugDraw(&m_debugDraw);
-		b2BodyDef bodyDef;
-		m_groundBody = m_world->CreateBody(&bodyDef);
-
 
 	}
 
 	void Step(Settings* settings) {
-
 		Test::Step(settings);
-
-		//DrawNest(5.0f);
-
-
 	}
 
 	void DrawNest(float a) {
