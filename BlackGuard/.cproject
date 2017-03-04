@@ -40,15 +40,15 @@
 							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.exe.release.1060157831" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.exe.release">
 								<option id="gnu.cpp.link.option.libs.1554434996" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" valueType="libs">
 									<listOptionValue builtIn="false" value="GL"/>
-									<listOptionValue builtIn="false" value="ShadowDancer"/>
 									<listOptionValue builtIn="false" value="GLU"/>
 									<listOptionValue builtIn="false" value="glut"/>
+									<listOptionValue builtIn="false" value="ShadowDancer"/>
 								</option>
 								<option id="gnu.cpp.link.option.paths.87743954" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ShadowDancer/Debug}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/ShadowDancer/Release}&quot;"/>
 								</option>
-								<option id="gnu.cpp.link.option.other.1966056409" superClass="gnu.cpp.link.option.other" valueType="stringList">
-									<listOptionValue builtIn="false" value="-R&quot;${workspace_loc:/ShadowDancer/Debug}&quot;"/>
+								<option id="gnu.cpp.link.option.other.1966056409" name="Other options (-Xlinker [option])" superClass="gnu.cpp.link.option.other" valueType="stringList">
+									<listOptionValue builtIn="false" value="-R&quot;${workspace_loc:/ShadowDancer/Release}&quot;"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.1495456475" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>

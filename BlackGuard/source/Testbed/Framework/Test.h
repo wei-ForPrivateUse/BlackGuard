@@ -193,6 +193,7 @@ protected:
     
     assa2d::SceneMgr* m_scenemgr;
     assa2d::SceneMgr::Configuration m_scenemgr_conf;
+    assa2d::Monitor* m_monitor;
 };
 
 #endif

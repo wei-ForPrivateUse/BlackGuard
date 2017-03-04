@@ -58,6 +58,7 @@ Test::Test()
     
     m_scenemgr = nullptr;
     m_scenemgr_conf.World = m_world;
+    m_monitor = nullptr;
 }
 
 Test::~Test()
