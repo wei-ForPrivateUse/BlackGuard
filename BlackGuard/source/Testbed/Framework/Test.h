@@ -196,4 +196,18 @@ protected:
     assa2d::Monitor* m_monitor;
 };
 
+namespace assa2d {
+///
+template<>
+class Accessor<Test> {
+public:
+	static void Replay_Step(SceneMgr* scenemgr) {
+		scenemgr -> PreStep();
+		scenemgr -> _M_Step();
+		scenemgr -> PostStep();
+	}
+};
+
+}
+
 #endif
