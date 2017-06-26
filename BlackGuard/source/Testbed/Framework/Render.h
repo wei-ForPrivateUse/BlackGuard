@@ -19,7 +19,7 @@
 #ifndef RENDER_H
 #define RENDER_H
 
-#include "ShadowDancer.h"
+#include <Box2D/Box2D.h>
 
 struct b2AABB;
 

@@ -197,7 +197,7 @@ protected:
 };
 
 namespace assa2d {
-///
+/// Get access to protected methods.
 template<>
 class Accessor<Test> {
 public:

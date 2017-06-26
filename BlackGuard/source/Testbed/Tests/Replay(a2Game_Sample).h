@@ -31,7 +31,8 @@ public:
 
 	void Step(Settings* settings) {
 		Test::Step(settings);
-		static_cast<FMonitor*>(m_monitor)->Step();
+		//static_cast<FMonitor*>(m_monitor)->Step();
+		DrawNest(10.0f);
 	//	std::cout<<m_stepCount<<" : "<<static_cast<FMonitor*>(m_monitor)->fitness<<std::endl;
 	}
 
