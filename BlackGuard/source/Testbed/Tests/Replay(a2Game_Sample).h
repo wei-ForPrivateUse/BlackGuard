@@ -101,30 +101,30 @@ public:
 		DrawSolidPolygon(w_v, 4, b2Color(0.5, 0.5, 0.5));
 
 		//robots
-		for(auto robot : static_cast<PScene*>(m_scenemgr)->GetNodesByTag(MAKE_TAG('r', 'o', 'b', 'o'))) {
-			b2Body* bd1 = static_cast<PRobot*>(robot)->m_motor[0]->GetBody();
+		for(auto robot : m_scenemgr->GetNodesByTag(MAKE_TAG('r', 'o', 'b', 'o'))) {
+			b2Body* bd1 = static_cast<J1_A_Robot*>(robot)->m_motor[0]->GetBody();
 			w_v[0] = bd1->GetWorldPoint(b2Vec2(-0.25, -0.1));
 			w_v[1] = bd1->GetWorldPoint(b2Vec2(0.25, -0.1));
 			w_v[2] = bd1->GetWorldPoint(b2Vec2(0.25, 0.1));
 			w_v[3] = bd1->GetWorldPoint(b2Vec2(-0.25, 0.1));
 			DrawSolidPolygon(w_v, 4, b2Color(0.2, 0.2, 0.2));
-			b2Body* bd2 = static_cast<PRobot*>(robot)->m_motor[1]->GetBody();
+			b2Body* bd2 = static_cast<J1_A_Robot*>(robot)->m_motor[1]->GetBody();
 			w_v[0] = bd2->GetWorldPoint(b2Vec2(-0.25, -0.1));
 			w_v[1] = bd2->GetWorldPoint(b2Vec2(0.25, -0.1));
 			w_v[2] = bd2->GetWorldPoint(b2Vec2(0.25, 0.1));
 			w_v[3] = bd2->GetWorldPoint(b2Vec2(-0.25, 0.1));
 			DrawSolidPolygon(w_v, 4, b2Color(0.2, 0.2, 0.2));
-			DrawSolidCircle(static_cast<PRobot*>(robot)->GetMainComponent()->GetPosition(), 0.5f, b2Color(0.4,0.6,0.8));
+			DrawSolidCircle(static_cast<J1_A_Robot*>(robot)->GetMainComponent()->GetPosition(), 0.5f, b2Color(0.4,0.6,0.8));
 		}
 
 		//poison
-		for(auto poison : static_cast<PScene*>(m_scenemgr)->GetNodesByTag(MAKE_TAG('p', 'o', 'i', 's'))) {
+		for(auto poison : m_scenemgr->GetNodesByTag(MAKE_TAG('p', 'o', 'i', 's'))) {
 			auto col = b2Color(0.8, 0.17, 0.17);
 			DrawSolidCircle(static_cast<Block*>(poison)->GetPosition(), static_cast<Block*>(poison)->GetBody()->GetFixtureList()->GetShape()->m_radius, col);
 		}
 
 		//resource
-		for(auto resource : static_cast<PScene*>(m_scenemgr)->GetNodesByTag(MAKE_TAG('r', 'e', 's', 'o'))) {
+		for(auto resource : m_scenemgr->GetNodesByTag(MAKE_TAG('r', 'e', 's', 'o'))) {
 			auto col = b2Color(0.2, 0.52, 0.3);
 			DrawSolidCircle(static_cast<Block*>(resource)->GetPosition(), static_cast<Block*>(resource)->GetBody()->GetFixtureList()->GetShape()->m_radius, col);
 		}
