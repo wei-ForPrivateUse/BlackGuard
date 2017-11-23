@@ -35,8 +35,8 @@ public:
 	void Step(Settings* settings) {
 		Test::Step(settings);
 
-		Draw();
-
+		//Draw();
+		DrawCircleNest(b2Vec2(0,0), 16, b2Color(0.8f, 0.8f, 0.8f));
 
 		float time = m_stepCount /60.0f;
 		char buffer[50];
@@ -44,6 +44,7 @@ public:
 		DrawString(50,100,buffer);
 	}
 
+	/// Draw Nests.
 	void DrawNest(float a) {
 		m_debugDraw.DrawSegment(b2Vec2(-a, -a), b2Vec2(-a, a),
 				b2Color(0.8f, 0.8f, 0.8f));
@@ -53,6 +54,9 @@ public:
 				b2Color(0.8f, 0.8f, 0.8f));
 		m_debugDraw.DrawSegment(b2Vec2(a, -a), b2Vec2(-a, -a),
 				b2Color(0.8f, 0.8f, 0.8f));
+	}
+	void DrawCircleNest(const b2Vec2& center, float32 radius, const b2Color& color) {
+		m_debugDraw.DrawCircle(center, radius, color);
 	}
 
 	static Test* Create() {
@@ -132,6 +136,7 @@ public:
 };
 
 
+/////
 /////
 /////
 void DrawSolidCircle(const b2Vec2& center, float32 radius, const b2Color& color)
