@@ -35,8 +35,9 @@ public:
 	}
 
 	void Step(Settings* settings) {
+		std::cout<<m_stepCount<<":   ";
 		Test::Step(settings);
-
+		std::cout<<std::endl;
 		//Draw();
 		DrawCircleNest(b2Vec2(0,0), 16, b2Color(0.8f, 0.8f, 0.8f));
 
