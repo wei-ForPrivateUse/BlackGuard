@@ -25,10 +25,12 @@
 	#include "GL/freeglut.h"
 #endif
 
-#include "Replay(a2Game_Sample).h"
+#include "UserDraw.h"
+
+#include "Replay.h"
 
 TestEntry g_testEntries[] =
 {
-	{"Replay(a2Game_Sample)", Replay_a2Game_Sample::Create},
+	{"Replay", Replay::Create},
 	{NULL, NULL}
 };

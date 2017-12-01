@@ -20,6 +20,8 @@
 #include "Test.h"
 #include "../../glui/glui.h"
 
+#include "../Tests/UserDraw.h"
+
 #include <stdio.h>
 
 namespace
@@ -36,7 +38,7 @@ namespace
 	int32 mainWindow;
 	float settingsHz = 60.0;
 	GLUI *glui;
-	float32 viewZoom = 2.0f;
+	float32 viewZoom = 4.5f;
 	int tx, ty, tw, th;
 	bool rMouseDown;
 	b2Vec2 lastp;
@@ -107,6 +109,10 @@ static void SimulationLoop()
 	}
 
 	test->DrawTitle(entry->name);
+	float time = test->GetStepCount() / settings.hz;
+	char buffer[50];
+	sprintf(buffer, ": %6.2fs -%d- ", time, test->GetStepCount());
+	DrawString(80,25,buffer);
 
 	glutSwapBuffers();
 
@@ -117,7 +123,7 @@ static void SimulationLoop()
 		entry = g_testEntries + testIndex;
 		test = entry->createFcn();
 		viewZoom = 1.0f;
-		settings.viewCenter.Set(0.0f, 20.0f);
+		settings.viewCenter.Set(0.0f, 0.0f);
 		Resize(width, height);
 	}
 }

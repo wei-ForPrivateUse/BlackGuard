@@ -55,7 +55,7 @@ struct Settings
 {
 	Settings()
 	{
-		viewCenter.Set(-12.0f, 0.0f);
+		viewCenter.Set(0.0f, 0.0f);
 		hz = 60.0f;
 		velocityIterations = 8;
 		positionIterations = 3;
@@ -167,6 +167,10 @@ public:
 	}
 
 	void ShiftOrigin(const b2Vec2& newOrigin);
+
+	int32 GetStepCount() const {
+		return m_stepCount;
+	}
 
 protected:
 	friend class DestructionListener;
