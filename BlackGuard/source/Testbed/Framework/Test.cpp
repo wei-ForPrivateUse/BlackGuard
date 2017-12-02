@@ -303,9 +303,10 @@ void Test::Step(Settings* settings)
     
     
     //*
-	if (!settings->pause)
+	if (!settings->pause) {
+		m_scenemgr->SetCurrentStep(m_stepCount);
 		assa2d::Accessor<Test>::Replay_Step(m_scenemgr);
-	//m_world->Step(timeStep, settings->velocityIterations, settings->positionIterations);
+	}
 	//*
 	m_world->DrawDebugData();
 
