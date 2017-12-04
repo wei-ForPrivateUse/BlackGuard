@@ -39,7 +39,9 @@ public:
 		J1_S_Field::Configuration conf;
 		conf.World = m_world;
 		conf.TrainingMode = 0;
-		conf.ResourceSupplement=20;
+		conf.Package = 0;
+		conf.PackageSupplement = 0;
+		conf.ResourceSupplement = -1;
 		m_scenemgr = new J1_S_Field(&conf, arbi, w1, w2, w3);
 	}
 
@@ -182,31 +184,35 @@ public:
 		}
 
 		// resource
-		for(auto resource : m_scenemgr->GetNodesByTag(MAKE_TAG('r', 'e', 's', 'o'))) {
-			b2Color col;
-			switch(static_cast<Block*>(resource)->GetMask() & 0x1) {
-			case 0x1:
-				col.Set(0.7f, 0.0f, 0.7f);
-				break;
-			case 0x2:
-				col.Set(0.0f, 0.3f, 0.0f);
-				break;
-			default:
-				col.Set(0.0f, 0.0f, 0.0f);
-				break;
+		if(m_scenemgr->CountNodesByTag(MAKE_TAG('r', 'e', 's', 'o')) > 0) {
+			for(auto resource : m_scenemgr->GetNodesByTag(MAKE_TAG('r', 'e', 's', 'o'))) {
+				b2Color col;
+				switch(static_cast<Block*>(resource)->GetMask() & 0x1) {
+				case 0x1:
+					col.Set(0.7f, 0.0f, 0.7f);
+					break;
+				case 0x2:
+					col.Set(0.0f, 0.3f, 0.0f);
+					break;
+				default:
+					col.Set(0.0f, 0.0f, 0.0f);
+					break;
+				}
+				DrawSolidCircle(static_cast<Block*>(resource)->GetPosition(), static_cast<Block*>(resource)->GetBody()->GetFixtureList()->GetShape()->m_radius, col);
 			}
-			DrawSolidCircle(static_cast<Block*>(resource)->GetPosition(), static_cast<Block*>(resource)->GetBody()->GetFixtureList()->GetShape()->m_radius, col);
 		}
 
 		// package
-		for(auto package : m_scenemgr->GetNodesByTag(MAKE_TAG('p', 'a', 'c', 'k'))) {
-			b2Color col = b2Color(0.3f, 0.3f, 0.0f);
-			b2Body* bd = static_cast<J1_O_Package*>(package)->GetBody();
-			w_v[3] = bd->GetWorldPoint(b2Vec2(1.5f, 2.0f));
-			w_v[2] = bd->GetWorldPoint(b2Vec2(-1.5f, 2.0f));
-			w_v[1] = bd->GetWorldPoint(b2Vec2(-1.5f, -2.0f));
-			w_v[0] = bd->GetWorldPoint(b2Vec2(1.5f, -2.0f));
-			DrawSolidPolygon(w_v, 4, col);
+		if(m_scenemgr->CountNodesByTag(MAKE_TAG('p', 'a', 'c', 'k')) > 0) {
+			for(auto package : m_scenemgr->GetNodesByTag(MAKE_TAG('p', 'a', 'c', 'k'))) {
+				b2Color col = b2Color(0.3f, 0.3f, 0.0f);
+				b2Body* bd = static_cast<J1_O_Package*>(package)->GetBody();
+				w_v[3] = bd->GetWorldPoint(b2Vec2(1.5f, 2.0f));
+				w_v[2] = bd->GetWorldPoint(b2Vec2(-1.5f, 2.0f));
+				w_v[1] = bd->GetWorldPoint(b2Vec2(-1.5f, -2.0f));
+				w_v[0] = bd->GetWorldPoint(b2Vec2(1.5f, -2.0f));
+				DrawSolidPolygon(w_v, 4, col);
+			}
 		}
 	}
 };
