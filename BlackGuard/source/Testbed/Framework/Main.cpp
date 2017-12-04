@@ -32,8 +32,8 @@ namespace
 	TestEntry* entry;
 	Test* test;
 	Settings settings;
-	int32 width = 1024;
-	int32 height = 768;
+	int32 width = 900;
+	int32 height = 750;
 	int32 framePeriod = 16;
 	int32 mainWindow;
 	float settingsHz = 60.0;
