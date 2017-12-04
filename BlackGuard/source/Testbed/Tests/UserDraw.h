@@ -80,7 +80,7 @@ inline void DrawString(int x, int y, const char *string, ...)
 	glPushMatrix();
 	glLoadIdentity();
 
-	glColor3f(0.9f, 0.6f, 0.6f);
+	glColor3f(0.8f, 0.1f, 0.1f);
 	glRasterPos2i(x, y);
 	int32 length = (int32)strlen(buffer);
 	for (int32 i = 0; i < length; ++i)
@@ -103,7 +103,7 @@ inline void DrawString(const b2Vec2& p, const char *string, ...)
 	vsprintf(buffer, string, arg);
 	va_end(arg);
 
-	glColor3f(0.5f, 0.9f, 0.5f);
+	glColor3f(0.8f, 0.1f, 0.1f);
 	glRasterPos2f(p.x, p.y);
 
 	int32 length = (int32)strlen(buffer);

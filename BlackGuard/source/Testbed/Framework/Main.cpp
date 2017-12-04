@@ -409,7 +409,7 @@ int main(int argc, char** argv)
 	mainWindow = glutCreateWindow(title);
 
 	///*
-	glClearColor(0.0,0.0,0.0,1.0);
+	glClearColor(1.0, 1.0, 1.0,1.0);
 	///*
 
 	glutDisplayFunc(SimulationLoop);
