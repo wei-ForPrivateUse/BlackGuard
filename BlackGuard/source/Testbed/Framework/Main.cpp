@@ -32,13 +32,13 @@ namespace
 	TestEntry* entry;
 	Test* test;
 	Settings settings;
-	int32 width = 900;
-	int32 height = 750;
+	int32 width = 1040;
+	int32 height = 680;
 	int32 framePeriod = 16;
 	int32 mainWindow;
 	float settingsHz = 60.0;
 	GLUI *glui;
-	float32 viewZoom = 4.5f;
+	float32 viewZoom = 2.5f;
 	int tx, ty, tw, th;
 	bool rMouseDown;
 	b2Vec2 lastp;
@@ -111,8 +111,8 @@ static void SimulationLoop()
 	test->DrawTitle(entry->name);
 	float time = test->GetStepCount() / settings.hz;
 	char buffer[50];
-	sprintf(buffer, ": %6.2fs -%d- ", time, test->GetStepCount());
-	DrawString(80,25,buffer);
+	sprintf(buffer, "Replay: %6.2fs -%d- ", time, test->GetStepCount());
+	DrawString(100,100,buffer);
 
 	glutSwapBuffers();
 
