@@ -50,7 +50,7 @@ public:
 		J0_S_Field::Configuration conf;
 		conf.World = m_world;
 		conf.TimeStep = 0.02;
-		conf.TrainingMode = 3;
+		conf.TrainingMode = 2;
 		m_scenemgr = new J0_S_Field(&conf, arbi, w1, w2, w3);
 		//m_scenemgr = new J0_S_Field_S(&conf, wa_a, wa_d);
 	}
