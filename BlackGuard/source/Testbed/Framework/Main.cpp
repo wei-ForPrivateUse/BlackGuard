@@ -36,7 +36,7 @@ namespace
 	int32 height = 680;
 	int32 framePeriod = 16;
 	int32 mainWindow;
-	float settingsHz = 60.0;
+	float settingsHz = 50.0;
 	GLUI *glui;
 	float32 viewZoom = 2.5f;
 	int tx, ty, tw, th;
