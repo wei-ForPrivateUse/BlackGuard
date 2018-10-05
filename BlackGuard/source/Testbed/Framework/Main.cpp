@@ -110,9 +110,12 @@ static void SimulationLoop()
 
 	test->DrawTitle(entry->name);
 	float time = test->GetStepCount() / settings.hz;
-	char buffer[50];
-	sprintf(buffer, "Replay: %6.2fs -%d- ", time, test->GetStepCount());
-	DrawString(100,100,buffer);
+	char buffer1[50];
+	char buffer2[50];
+	sprintf(buffer1, "Replay: %6.2fs", time);
+	sprintf(buffer2, "              -%d- ", test->GetStepCount());
+	DrawString(140,40,buffer1);
+	DrawString(140,60,buffer2);
 
 	glutSwapBuffers();
 
