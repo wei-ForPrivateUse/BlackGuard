@@ -105,7 +105,7 @@ public:
 	 			DrawSolidCircle(static_cast<A_Robot*>(robot)->GetMainComponent()->GetPosition(), 0.5f, col);
 
 				if(robot->GetId()==9) {
-					m_debugDraw.DrawCircle(static_cast<A_Robot*>(robot)->GetMainComponent()->GetPosition(), 15.0f, b2Color(0.4,0.9,0.8));
+					m_debugDraw.DrawCircle(static_cast<A_Robot*>(robot)->GetMainComponent()->GetPosition(), 12.0f, b2Color(0.4,0.9,0.8));
 				}
 			}
 
