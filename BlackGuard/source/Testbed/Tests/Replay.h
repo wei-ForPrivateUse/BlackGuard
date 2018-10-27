@@ -65,9 +65,6 @@ public:
 		sc.World = m_world;
 		sc.Robot=50;
 
-		sc.PoisonRadius = 2.5f;
-		sc.PoisonDensity = 0.48;
-
 		m_scenemgr = new  S_Field(&sc, w);
 	}
 
